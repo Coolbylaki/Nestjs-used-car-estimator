@@ -15,7 +15,7 @@ import { Report } from './reports/report.entity';
       type: 'better-sqlite3',
       database: 'db.sqlite',
       entities: [User, Report],
-      synchronize: true,
+      synchronize: true, // Only in dev mode
     }),
   ],
   controllers: [AppController],
