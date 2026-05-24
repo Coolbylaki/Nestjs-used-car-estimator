@@ -4,7 +4,7 @@ Content-Type: application/json
 
 {
   "email": "test98@gmail.com",
-  "password": "Iam-password",
+  "password": "Iamapassword"
 }
 
 ### Fail to create a new user 400
