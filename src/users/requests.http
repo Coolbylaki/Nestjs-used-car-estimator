@@ -3,8 +3,8 @@ POST http://localhost:3000/auth/signup
 Content-Type: application/json
 
 {
-  "email": "test98@gmail.com",
-  "password": "Iamapassword"
+  "email": "test_user2@gmail.com",
+  "password": "Whatever"
 }
 
 ### Fail to create a new user 400
