@@ -16,6 +16,32 @@ Content-Type: application/json
   "password": 213
 }
 
+### Update a user by ID
+PATCH http://localhost:3000/auth/5
+Content-Type: application/json
+
+{
+  "email": "updated@gmail.com",
+  "password": "updated-password"
+}
+
+### Update a user by ID with only email
+PATCH http://localhost:3000/auth/6
+Content-Type: application/json
+
+{
+  "email": "updated@gmail.com"
+}
+
+### Update a user by ID with only password
+PATCH http://localhost:3000/auth/7
+Content-Type: application/json
+
+{
+  "password": "updated-password"
+}
+
+
 ### Get user by ID
 GET http://localhost:3000/auth/3
 
