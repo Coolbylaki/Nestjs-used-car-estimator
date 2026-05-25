@@ -29,4 +29,9 @@ export class UsersController {
   async createUser(@Body() body: CreateUserDto) {
     await this.usersService.create(body.email, body.password);
   }
+
+  @Delete('/:id')
+  async deleteUser(@Param('id') id: string) {
+    return await this.usersService.remove(parseInt(id));
+  }
 }
