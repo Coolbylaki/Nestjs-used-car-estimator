@@ -3,7 +3,7 @@ POST http://localhost:3000/auth/signup
 Content-Type: application/json
 
 {
-  "email": "test_user6@gmail.com",
+  "email": "test_user2@gmail.com",
   "password": "Whatever"
 }
 
@@ -15,3 +15,9 @@ Content-Type: application/json
   "email": "test98@gmail",
   "password": 213
 }
+
+### Get user by ID
+GET http://localhost:3000/auth/3
+
+### Get users by email
+GET http://localhost:3000/auth?email=test_user2@gmail.com
