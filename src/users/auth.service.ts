@@ -16,15 +16,22 @@ export class AuthService {
     if (users.length) {
       throw new BadRequestException('Email in use');
     }
+
     // Hash the users password
     // Generate a salt
     const salt = randomBytes(8).toString('hex');
+
     // Hash the salt and the password together
     const hash = (await scrypt(password, salt, 32)) as Buffer;
+
     // Join hashed result and the salt together
     const result = salt + '.' + hash.toString('hex');
+
     // Create a new user and save it
+    const user = await this.userService.create(email, result);
+
     // Return the user
+    return user;
   }
 
   signIn() {}
