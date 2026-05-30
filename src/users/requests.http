@@ -1,21 +1,3 @@
-### Create a new user
-POST http://localhost:3000/auth/signup
-Content-Type: application/json
-
-{
-  "email": "hasheeed98@gmail.co",
-  "password": "laki98sd!!!"
-}
-
-### Sign in a user
-POST http://localhost:3000/auth/signin
-Content-Type: application/json
-
-{
-  "email": "hasheeed98@gmail.co",
-  "password": "laki98sd!!!"
-}
-
 ### Fail to create a new user 400
 POST http://localhost:3000/auth/signup
 Content-Type: application/json
@@ -24,6 +6,30 @@ Content-Type: application/json
   "email": "test98@gmail",
   "password": 213
 }
+
+### Create a new user
+POST http://localhost:3000/auth/signup
+Content-Type: application/json
+
+{
+  "email": "test@test.com",
+  "password": "12345"
+}
+
+### Sign in a user
+POST http://localhost:3000/auth/signin
+Content-Type: application/json
+
+{
+  "email": "test@test.com",
+  "password": "12345"
+}
+
+### Get user by ID
+GET http://localhost:3000/auth/5
+
+### Get users by email
+GET http://localhost:3000/auth?email=test_user2@gmail.com
 
 ### Update a user by ID
 PATCH http://localhost:3000/auth/5
@@ -47,17 +53,11 @@ PATCH http://localhost:3000/auth/7
 Content-Type: application/json
 
 {
-  "password": "updated-password"
+  "password": "updated-password!!!"
 }
 
-### Get user by ID
-GET http://localhost:3000/auth/5
-
-### Get users by email
-GET http://localhost:3000/auth?email=test_user2@gmail.com
-
 ### Delete user by ID
-DELETE http://localhost:3000/auth/3
+DELETE http://localhost:3000/auth/5
 
 ### Get user by ID that don't exist
 GET http://localhost:3000/auth/300
