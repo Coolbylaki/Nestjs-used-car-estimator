@@ -30,6 +30,11 @@ export class UsersController {
     return this.usersService.find(email);
   }
 
+  @Get('/whoami')
+  whoAmI(@Session() session: any) {
+    return this.usersService.findOne(session.userId as number);
+  }
+
   @Get('/:id')
   async findUser(@Param('id') id: string) {
     const user = await this.usersService.findOne(parseInt(id));
@@ -39,6 +44,11 @@ export class UsersController {
     }
 
     return user;
+  }
+
+  @Post('/signout')
+  signOut(@Session() session: any) {
+    session.userId = null;
   }
 
   @Post('/signup')
